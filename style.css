@@ -1,0 +1,49 @@
+/* Modifying common html tags */
+
+body{
+
+    /*ORDER OF PRESEDENCE: css has order of presedence/ specificity. 
+    kapag nag-edit ka sa inline yon yung magbabago kasi it's inline.
+    
+    internal (styles that are embedded in the index.html)
+    yung <style></style>
+    external;
+    
+    
+    ang atake ay top to bottom*/
+    background-color: navy;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:100%;
+    background-image: url('https://media.tenor.com/N_evCZxjkCwAAAAd/onikaswanz-stan-twitter.gif');
+}
+
+
+.first-paragraph{
+    color: #09ff00;
+    background-color: red;
+
+}
+
+h1{
+    background:green;
+}
+
+.flex-container{
+    background-color: violet;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;/*https://www.w3schools.com/css/css3_flexbox_container.asp
+    */
+    align-items: stretch;
+}
+
+.flex-item{
+    flex: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 10px;
+    /*margin-inline-end: 50px;*/
+}
+
+/* CSS constructor is what this is called. */

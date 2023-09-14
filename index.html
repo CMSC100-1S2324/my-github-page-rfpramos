@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Title of the website -->
+    <!-- This will serve as a portfolio website.-->
+    <title>Ramnick Francis</title>  
+
+    <style>
+
+        /* Sets the backgroudn image  */
+        body{
+            background-image: url('assets/bg_image.png');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+
+        /* The main contents are offset by 200 px to give space to the navigation bar */
+        #main_content{
+            margin-left:200px;
+        }
+
+        
+        /* Template flex container from lab handout  */
+        .flex_container{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            
+        }
+        
+         /* Template flex item from lab handout */
+        .flex_item {
+            /* To make the radius round */
+            border-radius: 15px;
+            align-self: auto;
+            /* I created a background fill with .75 opacity */
+            background-color: rgba(00,00,00,.75);
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 12px;
+        }
+
+        /* This is also a flex container that will be added on top of the flex container class specifically for the navigation
+        It is put below to follow order of presedence */
+        .navbar{
+            justify-content: flex-start;
+            height:100%;
+            background-color: rgba(00,00,00,.5);
+            border-radius: 15px;
+            width: 200px;
+            flex-direction: column;
+            margin-top: 0px;
+            z-index: 1;
+            position: fixed;
+        }
+
+        /* most of the links that were used are just for navigation so I felt like they do not need the underlined text decoration  */
+        a{
+            text-decoration:none;
+        }
+
+        /* This is also a flex item that will be added on top of the flex item class specifically for the navigation
+        It is put below to follow order of presedence */
+        .nav_item{
+            
+            line-height: 20px;
+            text-align: left;
+            font-size: larger;
+            background-color: white;
+            color:white;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: transparent;
+        }
+/* 
+        Likewise with the nav item however this is for the project section
+        Adding these "overiding" CSS designs allows me to efficiently design the website */
+        .project_item{
+            line-height: 10px;
+            width: 30%;
+            height:auto;
+            color:white;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content:baseline;
+        }
+
+        .project_item > img{
+            width: auto;
+            height:auto;
+        }
+
+      
+        
+        .section_title{
+            text-align: center;
+            color:white;
+        }
+
+        .about_me_opt{
+            font-size: smaller;
+            margin-top: 10px;
+        }
+
+        /* Another overriding CSS design for Flex Item  */
+        .about_me_item{
+            line-height: 10px;
+            width: 40%;
+            color:white;
+            margin: 10px;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #projects, #about_me{
+            display:flex; flex-wrap: wrap;
+        }
+
+        
+        h2{
+            font-family:monospace;
+        }
+
+        h1{
+            
+            font-family:fantasy;
+            font-size: 300%;
+            opacity: .8;
+        }
+/* 
+        CSS for Footer */
+        .footer{
+            padding:10px;
+            height:20%;
+            width: 100%;
+            background-color: black;
+            align-items: center;
+        }
+
+        .footer_item{
+        
+            line-height: 10px;
+            width: auto;
+            color:white;
+            margin: 10px;
+            flex-direction: row;
+        }
+
+      
+
+        p{
+            line-height: 20px;
+            padding: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        
+        
+    </style>
+    <!-- For the icon in the tab  -->
+    <link rel="shortcut icon" href="assets/logo.png"/>
+  </head>
+
+
+
+  <!-- This is for the side navigation bar -->
+  <div class="flex_container navbar">
+
+    <!-- It links the texts to the specific ids in the webpage -->
+    <!-- Ive set the logo as the home button just like in FB.-->
+    <a href="#cover_photo"><img src="assets/logo.png" alt="Logo" width="100px" height="100px" style="padding:10px;">
+    </a>
+    <a href="#projects"><span class="flex_item nav_item">Projects</span>  </a>
+    <a href="#about_me" ><span class="flex_item nav_item">About Me</span> </a>
+    <ul class="about_me_opt" style="list-style-type: none;">
+        <a href="#autobio" > <li> <span class="flex_item nav_item ">Autobiography</span></li> </a>
+        <a href="#skills" > <li> <span href="#skills" class="flex_item nav_item ">Skills</span></li></a>
+    </ul>
+   
+    </div>
+  
+
+    <!-- Since we ought to give space for the side navigation bar, we enclosed the entire content in to one div in order to be able to revise its width -->
+    <div id="main_content">
+
+
+    <!-- Featured photo is a gif -->
+  <div class="flex_container" id="cover_photo" style="display:flex; flex-wrap: wrap;">
+    <img src="assets/cover_photo.gif" alt="Ramnick Ramos" width="100%" height="100%">
+  </div>
+  
+
+
+  <!-- Section for Project -->
+  <h1 class="section_title">Projects</h1>
+
+  <div class="flex_container" id="projects">
+ 
+    <!-- Each projects sports an image and a corresponding description -->
+    <!-- They are enclosed in an item of the flexcontainer -->
+    <div class="flex_item project_item">
+        <a href="https://rfpramos.github.io/BooKonnect/">
+        <img src="assets/bookonnect.png" alt="BooKonnect" width="100%" height="100%"> 
+    </a>
+        <h2>BooKonnect</h2>
+        <p>BooKonnect is a book donation platform that allows book donors to choose which books to donate to Children Readers of Africa. Through "swiping right" and "swiping left", a donor get to choose which books he wants to donate. </p>
+        
+    </div>
+
+    <div class="flex_item project_item" >
+        <a href="https://rfpramos.github.io/WebiNow/">
+        <img src="assets/webinow.png" alt="Webinow" width="100%" height="100%"> 
+    </a>
+        <h2>WebiNow</h2>
+        <p>It is a platform that allows you to find webinars that are soon to happen, so that you'll be able to have the opportunity to learn through participating them. You can view these webinars through catergories so that you'll be able to find what you are looking for. </p>
+            
+        </div>
+
+    <div class="flex_item project_item ">
+        <a href="https://rfpramos.github.io/contra-covid-PH-deployment/">
+        <img  src="assets/contracovid.png" alt="ContraCovid-2019" width="100%" height="100%"> 
+        </a>
+        <h2>ContraCovid-2019</h2>
+        <p>ContraCovid is an interactive simulation of the spread of the SARSCov called Coronavirus 2019. It aims to simulate an SEIR Mathematical model through visual representation of animationed marbles. </p>
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <!-- For this, I have decided to enjoin into one section the Autobiography and Skills into one about me section -->
+  <h1 class="section_title" >About Me</h1>
+  <div class="flex_container" id="about_me">
+    
+    <div class="flex_item about_me_item" >
+        <h2 id="autobio">Autobiography</h2>
+
+        <!-- I included an application video  -->
+        <video width="90%"  controls>
+            <source src="assets/intro.mp4" type="video/mp4">
+          </video>
+        <h2>Call me Ramnick!</h2>
+        <!-- Brief Autobiography. Details redacted for privacy. -->
+        <p>Ramnick, a junior at the University of the Philippines Los banos, lives in the small town of Siniloan, Laguna. He considers fitness and producing innovative solutions through web development as his main passions. His goals in life revolve around making the world a better place.</p>
+    </div>
+
+    <div class="flex_item about_me_item">
+        <h2 id="skills">Skills</h2>  
+
+        <!-- For the skills, apart from adding an explanation paragraph, I have also inputted a view of my resume  -->
+        <object data="assets/RAMNICK FRANCIS RAMOS - Resume.pdf" type="application/pdf" width="100%" height="400px">
+            <p>This is my resume</p>
+          </object>
+          <p> My main skills revolve around leadership, communication, and technical skills on programming. I have attached my resume above for reference.</p>
+    </div>
+  </div>
+
+
+  
+  <!--Footer for the website.-->
+    <div class="flex_container footer" style="display:flex; flex-wrap: wrap; ">
+        <div class="flex_item footer_item">
+            <!-- Logo is also a back to top link-->
+            <a href="#cover_photo"><img src="assets/logo.png" alt="Logo" width="100px" height="100px"></a>
+        </div>
+        <div class="flex_item footer_item">
+            <!--Ive included a link for my email-->
+            <p>Ramnick Francis Ramos | Siniloan, Laguna | <a href="mailto:rpramos5@up.edu.ph" style="font-family: fantasy; color:white;">rpramos5@up.edu.ph </a>| Copyright 2023</p>
+
+        </div>
+
+        <div class="flex_item footer_item">
+            <a href="#cover_photo" style="font-family: fantasy; color:white;">Back to Top</a>
+        </div>
+
+      </div>
+  
+
+    </div>
+  </body>
+
+</html>
